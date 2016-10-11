@@ -1,7 +1,7 @@
 {
-  "name": "redux-vitruvius",
+  "name": "vitruvius",
   "version": "1.0.0",
-  "description": "",
+  "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf lib",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh:****.com/uie/redux-vitruvius.git"
+    "url": "ssh:****.com/uie/vitruvius.git"
   },
   "author": "Jimmy King <jimmy.king@aexp.com>",
   "license": "SEE LICENSE IN LICENSE",
@@ -30,8 +30,10 @@
     "immutable": "^3.8.1",
     "istanbul": "^1.0.0-alpha.2",
     "mocha": "^3.0.2",
-    "redux": "^3.6.0",
     "rimraf": "^2.5.4",
     "sinon": "^1.17.6"
+  },
+  "dependencies": {
+    "redux": "^3.6.0"
   }
 }
