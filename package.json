@@ -10,7 +10,7 @@
     "lint": "eslint --ignore-path .eslintignore ./src/**/*.js ./test/**/*.js",
     "pretest": "npm run lint",
     "test": "BABEL_ENV=test istanbul cover _mocha -- 'test/**/*.spec.js' --compilers js:babel-register",
-    "prepublish": "npm run prebuild && npm run build"
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
