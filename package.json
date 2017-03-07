@@ -1,5 +1,5 @@
 {
-  "name": "vitruvius",
+  "name": "@amex/vitruvius",
   "version": "1.0.1",
   "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
@@ -36,5 +36,8 @@
   },
   "dependencies": {
     "redux": "^3.6.0"
+  },
+  "publishConfig": {
+    "registry": "****.com/artifactory/api/npm/npm-virtual"
   }
 }
