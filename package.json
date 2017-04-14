@@ -14,7 +14,7 @@
     "postinstall": "postinstall-build lib \"npm run build\""
   },
   "jest": {
-    "preset": "one-amex-jest-preset",
+    "preset": "amex-jest-preset",
     "collectCoverageFrom": [
       "src/**/*.js",
       "!**/node_modules/**"
@@ -25,18 +25,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh:****.com/uie/vitruvius.git"
+    "url": "https://github.com/americanexpress/vitruvius.git"
   },
-  "author": "Jimmy King <jimmy.king@aexp.com>",
-  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "redux",
+    "reducer",
+    "initial state"
+  ],
+  "author": "Jimmy King <jimmy.king@aexp.com> (https://github.com/jking90)",
+  "license": "Apache-2.0",
   "devDependencies": {
+    "amex-jest-preset": "^3.0.0",
     "babel-cli": "^6.24.0",
-    "babel-preset-holocron": "^0.2.2",
+    "babel-preset-amex": "^1.0.0",
     "eslint": "^3.18.0",
-    "eslint-config-one-amex": "^3.0.0",
+    "eslint-config-amex": "^4.0.0",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
-    "one-amex-jest-preset": "^2.1.0",
     "rimraf": "^2.6.1"
   },
   "dependencies": {
