@@ -1,5 +1,5 @@
 {
-  "name": "@amex/vitruvius",
+  "name": "@americanexpress/vitruvius",
   "version": "1.1.0",
   "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
@@ -42,13 +42,13 @@
     "eslint-config-amex": "^4.0.0",
     "immutable": "^3.8.1",
     "jest": "^19.0.2",
+    "redux": "^3.6.0",
     "rimraf": "^2.6.1"
   },
   "dependencies": {
-    "postinstall-build": "^3.0.0",
-    "redux": "^3.6.0"
+    "postinstall-build": "^3.0.0"
   },
-  "publishConfig": {
-    "registry": "****.com/artifactory/api/npm/npm-virtual"
+  "peerDependencies": {
+    "redux": "^3.6.0"
   }
 }

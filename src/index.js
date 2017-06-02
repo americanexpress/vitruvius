@@ -1,4 +1,4 @@
-import combineReducers from 'redux/lib/combineReducers';
+import { combineReducers } from 'redux';
 
 export default function vitruvius(reducers) {
   const combined = combineReducers(reducers);
