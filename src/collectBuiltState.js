@@ -12,15 +12,19 @@
  * the License.
  */
 
-import { combineReducers } from 'redux';
-import collectBuiltState from './collectBuiltState';
+export default function collectBuiltState({ reducers, locals, defaultState }) {
+  let builtState = defaultState;
 
-export default function vitruvius(reducers) {
-  const combined = combineReducers(reducers);
+  Object.keys(reducers).forEach((key) => {
+    const reducer = reducers[key];
+    if (typeof reducer === 'function' && typeof reducer.buildInitialState === 'function') {
+      if (typeof builtState.set === 'function') {
+        builtState = builtState.set(key, reducer.buildInitialState(locals));
+      } else {
+        builtState[key] = reducer.buildInitialState(locals);
+      }
+    }
+  });
 
-  combined.buildInitialState = function buildInitialState(locals) {
-    return collectBuiltState({ reducers, locals, defaultState: {} });
-  };
-
-  return combined;
+  return builtState;
 }
