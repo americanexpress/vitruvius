@@ -13,6 +13,7 @@
  */
 
 import { Map } from 'immutable';
+import { createStore } from 'redux';
 
 export const SOME_ACTION = 'SOME_ACTION';
 
@@ -62,4 +63,74 @@ export function staticReducer(state = new Map({ static: true }), action) {
     default:
       return state;
   }
+}
+
+export function runVitruviusTests(describeSpec, vitruvius) {
+  return describe(describeSpec, () => {
+    const locals = { data: 'test' };
+
+    it('should handle all reducers having buildInitialState method', () => {
+      const reducer = vitruvius({
+        stuff: stuffReducer,
+        things: thingsReducer,
+        other: otherReducer,
+      });
+      const actual = reducer.buildInitialState(locals);
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should handle no reducers having buildInitialState method', () => {
+      const reducer = vitruvius({
+        static: staticReducer,
+      });
+      const actual = reducer.buildInitialState(locals);
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should handle a mix of reducers having and not having buildInitialState method', () => {
+      const reducer = vitruvius({
+        stuff: stuffReducer,
+        things: thingsReducer,
+        other: otherReducer,
+        static: staticReducer,
+      });
+      const actual = reducer.buildInitialState(locals);
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should build the expected state for a flat tree of reducers', () => {
+      const reducer = vitruvius({
+        stuff: stuffReducer,
+        things: thingsReducer,
+        other: otherReducer,
+        static: staticReducer,
+      });
+      const actual = reducer.buildInitialState(locals);
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should build the expected state for a nested tree of reducers', () => {
+      const reducer = vitruvius({
+        stuff: stuffReducer,
+        nested: vitruvius({
+          things: thingsReducer,
+          other: otherReducer,
+        }),
+      });
+      const actual = reducer.buildInitialState(locals);
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should return an initialState that is acceptable to redux\'s createStore', () => {
+      const reducer = vitruvius({
+        stuff: stuffReducer,
+        things: thingsReducer,
+        other: otherReducer,
+        static: staticReducer,
+      });
+      const store = createStore(reducer, reducer.buildInitialState(locals));
+      const actual = store.getState();
+      expect(actual).toMatchSnapshot();
+    });
+  });
 }

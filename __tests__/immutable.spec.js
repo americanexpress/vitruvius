@@ -12,15 +12,16 @@
  * the License.
  */
 
-import { combineReducers } from 'redux';
-import collectBuiltState from './collectBuiltState';
+import vitruviusImmutable from '../src/immutable';
+import vitruviusImmutableExport from '../immutable';
+import { runVitruviusTests } from './fixtures';
 
-export default function vitruvius(reducers) {
-  const combined = combineReducers(reducers);
+jest.mock('../lib/immutable', () => require('../src/immutable'), { virtual: true });
 
-  combined.buildInitialState = function buildInitialState(locals) {
-    return collectBuiltState({ reducers, locals, defaultState: {} });
-  };
+runVitruviusTests('vitruviusImmutable', vitruviusImmutable);
 
-  return combined;
-}
+describe('vitruviusImmutable export', () => {
+  it('should export vitruviusImmutable', () => {
+    expect(vitruviusImmutableExport.name).toBe('vitruviusImmutable');
+  });
+});

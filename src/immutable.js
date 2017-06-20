@@ -12,14 +12,15 @@
  * the License.
  */
 
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
+import { Map } from 'immutable';
 import collectBuiltState from './collectBuiltState';
 
-export default function vitruvius(reducers) {
-  const combined = combineReducers(reducers);
+export default function vitruviusImmutable(reducers, getDefaultState = Map) {
+  const combined = combineReducers(reducers, getDefaultState);
 
   combined.buildInitialState = function buildInitialState(locals) {
-    return collectBuiltState({ reducers, locals, defaultState: {} });
+    return collectBuiltState({ reducers, locals, defaultState: getDefaultState() });
   };
 
   return combined;

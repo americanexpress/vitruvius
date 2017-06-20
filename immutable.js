@@ -12,15 +12,6 @@
  * the License.
  */
 
-import { combineReducers } from 'redux';
-import collectBuiltState from './collectBuiltState';
-
-export default function vitruvius(reducers) {
-  const combined = combineReducers(reducers);
-
-  combined.buildInitialState = function buildInitialState(locals) {
-    return collectBuiltState({ reducers, locals, defaultState: {} });
-  };
-
-  return combined;
-}
+// Required file is only included in build
+// eslint-disable-next-line import/no-unresolved
+module.exports = require('./lib/immutable');
