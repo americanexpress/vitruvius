@@ -4,8 +4,18 @@ Vitruvius extends redux's `combineReducers` to allow developers to include a
 `buildInitialState` method on their reducer. This allows for the passing of
 locals to build the initial state that wouldn't normally be available to a
 reducer when setting its initial state. For instance, one could pass some data
-from the request object. Below is an example of a reducer implementing a
-`buildInitialState` method and an example of virtuvius being implemented.
+from the request object.
+
+## Installation
+
+```
+$ npm install --save @americanexpress/vitruvius
+```
+
+## Implementation
+
+Below is an example of a reducer implementing a `buildInitialState` method and
+an example of vitruvius being implemented.
 
 ```js
 import { Map } from 'immutable';
@@ -26,8 +36,13 @@ export default function reducer(state = buildInitialState(), action) {
 reducer.buildInitialState = buildInitialState;
 ```
 
+> **TIP**: To extend `combineReducers` from `redux-immutable` instead of `redux`
+import from `vitruvius/immutable`.
+
 ```js
-const reducer = virtuvius({
+import vitruvius from 'vitruvius';
+
+const reducer = vitruvius({
   stuff: stuffReducer,
   things: thingsReducer,
   ...otherReducers,
@@ -35,6 +50,7 @@ const reducer = virtuvius({
 
 const store = createStore(reducer, reducer.buildInitialState(locals), enhancer);
 ```
+
 
 ## Contributing
 We welcome Your interest in the American Express Open Source Community on Github.

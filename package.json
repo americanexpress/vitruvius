@@ -1,6 +1,6 @@
 {
   "name": "@americanexpress/vitruvius",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
   "scripts": {
@@ -30,25 +30,24 @@
   "keywords": [
     "redux",
     "reducer",
+    "immutable",
     "initial state"
   ],
   "author": "Jimmy King <jimmy.king@aexp.com> (https://github.com/jking90)",
   "license": "Apache-2.0",
   "devDependencies": {
-    "amex-jest-preset": "^3.0.0",
-    "babel-cli": "^6.24.0",
-    "babel-preset-amex": "^1.0.0",
-    "eslint": "^3.18.0",
-    "eslint-config-amex": "^4.0.0",
-    "immutable": "^3.8.1",
-    "jest": "^19.0.2",
-    "redux": "^3.6.0",
+    "amex-jest-preset": "^3.3.0",
+    "babel-cli": "^6.24.1",
+    "babel-preset-amex": "^1.0.1",
+    "eslint": "^3.19.0",
+    "eslint-config-amex": "^6.0.0",
+    "jest": "^20.0.4",
     "rimraf": "^2.6.1"
   },
   "dependencies": {
-    "postinstall-build": "^3.0.0"
-  },
-  "peerDependencies": {
-    "redux": "^3.6.0"
+    "immutable": "^3.8.1",
+    "postinstall-build": "^5.0.0",
+    "redux": "^3.6.0",
+    "redux-immutable": "^4.0.0"
   }
 }
