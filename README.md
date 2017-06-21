@@ -37,10 +37,10 @@ reducer.buildInitialState = buildInitialState;
 ```
 
 > **TIP**: To extend `combineReducers` from `redux-immutable` instead of `redux`
-import from `vitruvius/immutable`.
+import from `@americanexpress/vitruvius/immutable`.
 
 ```js
-import vitruvius from 'vitruvius';
+import vitruvius from '@americanexpress/vitruvius';
 
 const reducer = vitruvius({
   stuff: stuffReducer,
