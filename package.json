@@ -38,6 +38,7 @@
     "amex-jest-preset": "^3.3.0",
     "babel-cli": "^6.24.1",
     "babel-preset-amex": "^1.0.1",
+    "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-amex": "^6.0.0",
     "jest": "^20.0.4",
