@@ -32,7 +32,7 @@
     "immutable",
     "initial state"
   ],
-  "author": "Jimmy King <jimmy.king@aexp.com> (https://github.com/jking90)",
+  "author": "Jimmy King <jimmy.king@aexp.com> (https://github.com/10xLaCroixDrinker)",
   "license": "Apache-2.0",
   "devDependencies": {
     "amex-jest-preset": "^3.3.0",
