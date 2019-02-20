@@ -3,27 +3,27 @@
 exports[`collectBuiltState should build a mutable state 1`] = `
 Object {
   "other": Immutable.Map {
-    baz: "test",
-},
+    "baz": "test",
+  },
   "stuff": Immutable.Map {
-    foo: "test",
-},
+    "foo": "test",
+  },
   "things": Immutable.Map {
-    bar: "test",
-},
+    "bar": "test",
+  },
 }
 `;
 
 exports[`collectBuiltState should build an immutable state 1`] = `
 Immutable.Map {
-  stuff: Immutable.Map {
-    foo: "test",
+  "stuff": Immutable.Map {
+    "foo": "test",
   },
-  things: Immutable.Map {
-    bar: "test",
+  "things": Immutable.Map {
+    "bar": "test",
   },
-  other: Immutable.Map {
-    baz: "test",
+  "other": Immutable.Map {
+    "baz": "test",
   },
 }
 `;
