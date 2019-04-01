@@ -9,6 +9,9 @@ locals to build the initial state that wouldn't normally be available to a
 reducer when setting its initial state. For instance, one could pass some data
 from the request object.
 
+> Want to get paid for your contributions to `vitruvius`?
+> Send your resume to oneamex.careers@aexp.com
+
 ## Installation
 
 ```
