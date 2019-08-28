@@ -4,3 +4,11 @@ node_js:
   - "10"
   - "8"
   - "6"
+deploy:
+  on:
+    tags: true
+    branch: master
+  provider: npm
+  email: open-source-ops@aexp.com
+  api_key:
+    secure: hbM21DWoPxQMxjobi16vcKBJ2ndFSjTVuBDK4zDWFfObZYrlulJO4SWsTL/Ka1a4+BItv0b29ZlZr4scS2xOoNeNMFfrfxs3mdiv4sPauzc+tFkkQ5Jv3Vk9fn3AFDocRaB1d63L7UGeebPsMcXEsfOYYNYutIOCELntIPRr84oELCHuQg1iNMFKvlE6acTnE3xf+ifhhjRaMXfpQ7oQWX6Ac3d0mWYRn8JDWIjtTWnFOEeNOuvW4AbiBQp3Ms4g8wiy3QIs6xHcVh1PsHvxnHDgHc8t0vMlDNNzk9ceQdcC0vBHteq2q7VKsG6uAnJZZkt1k0S4PuAswX/oDgUfUDKyaa1ZijbWCXRyoDkmDuy+GGuEiNRl82FpLjhbmkO/8j+Exjok6dR2Tz5U+5RduXKzk/s77Qn9pwu2wNKIH3aS9crOQ2XAmXLvo73R9tYepRGp89IsRpjPaZ3bcvvoj1u+opiZdf0rv06Qb1Fi9AWz7CgbM1fMrQDjAqpsIeSzxHMI11fLIvfZ30wc5Q1l3T65q/Pr5PpwDf4pyb9Uwf7Uf+VuhyVNwKGxrAJb/PdhpuoHIsUl9G53EmSa8MY8v9cdbJBGh5vAKURwRRQaYemSECz/IvHhgcTOjtGPPlnbQaHJ3l67eAx088zf+NOi+ZKZtxPEVXbzyZfi85GGJnk=
