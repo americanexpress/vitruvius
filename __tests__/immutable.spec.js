@@ -16,6 +16,7 @@ import vitruviusImmutable from '../src/immutable';
 import vitruviusImmutableExport from '../immutable';
 import { runVitruviusTests } from './fixtures';
 
+// eslint-disable-next-line global-require
 jest.mock('../lib/immutable', () => require('../src/immutable'), { virtual: true });
 
 runVitruviusTests('vitruviusImmutable', vitruviusImmutable);
