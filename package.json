@@ -10,6 +10,8 @@
     "lint": "eslint ./ --ignore-path .eslintignore --ext .js",
     "pretest": "npm run lint",
     "test": "jest",
+    "test:git-history": "commitlint --from origin/master --to HEAD",
+    "posttest": "npm run test:git-history",
     "prepublishOnly": "npm run build"
   },
   "jest": {
@@ -37,11 +39,14 @@
   "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "amex-jest-preset": "^5.0.0",
     "babel-preset-amex": "^3.0.0",
     "coveralls": "^3.0.7",
     "eslint": "^6.5.1",
     "eslint-config-amex": "^11.1.0",
+    "husky": "^3.1.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.9.0",
     "redux": "^4.0.4",
@@ -52,5 +57,11 @@
     "immutable": "^3||^4",
     "redux": "^3||^4",
     "redux-immutable": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

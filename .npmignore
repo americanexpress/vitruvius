@@ -4,3 +4,4 @@ src
 *.log
 *.swp
 package-lock.json
+commitlint.config.js
