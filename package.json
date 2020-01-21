@@ -11,7 +11,8 @@
     "pretest": "npm run lint",
     "test": "jest",
     "test:git-history": "commitlint --from origin/master --to HEAD",
-    "posttest": "npm run test:git-history",
+    "test:lockfile": "lockfile-lint -p package-lock.json -t npm -a npm -o https: -c -i",
+    "posttest": "npm run test:git-history && npm run test:lockfile",
     "prepublishOnly": "npm run build"
   },
   "jest": {
@@ -49,6 +50,7 @@
     "husky": "^3.1.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.9.0",
+    "lockfile-lint": "^3.0.8",
     "redux": "^4.0.4",
     "redux-immutable": "^4.0.0",
     "rimraf": "^3.0.0"
