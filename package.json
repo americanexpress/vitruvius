@@ -50,7 +50,7 @@
     "husky": "^3.1.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "^24.9.0",
-    "lockfile-lint": "^3.0.8",
+    "lockfile-lint": "^4.1.0",
     "redux": "^4.0.4",
     "redux-immutable": "^4.0.0",
     "rimraf": "^3.0.0"
