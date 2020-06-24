@@ -56,7 +56,7 @@
     "rimraf": "^3.0.0"
   },
   "peerDependencies": {
-    "immutable": "^3||^4",
+    "immutable": "^3||^4.0.0-rc",
     "redux": "^3||^4",
     "redux-immutable": "^4.0.0"
   },
