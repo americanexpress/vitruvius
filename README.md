@@ -1,7 +1,7 @@
 # vitruvius
 
 [![npm version](https://badge.fury.io/js/%40americanexpress%2Fvitruvius.svg)](https://badge.fury.io/js/%40americanexpress%2Fvitruvius)
-[![Build Status](https://travis-ci.org/americanexpress/vitruvius.svg?branch=master)](https://travis-ci.org/americanexpress/vitruvius)
+![Health Check](https://github.com/americanexpress/vitruvius/workflows/Health%20Check/badge.svg)
 
 Vitruvius extends redux's `combineReducers` to allow developers to include a
 `buildInitialState` method on their reducer. This allows for the passing of
