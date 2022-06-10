@@ -60,7 +60,7 @@
     "redux": "^4.0.4",
     "redux-immutable": "^4.0.0",
     "rimraf": "^3.0.0",
-    "semantic-release": "^17.1.2"
+    "semantic-release": "^19.0.3"
   },
   "peerDependencies": {
     "immutable": "^3||^4.0.0-rc",
