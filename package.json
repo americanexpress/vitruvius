@@ -35,7 +35,7 @@
     "immutable",
     "initial state"
   ],
-  "author": "Jimmy King <jimmy.king@aexp.com> (https://github.com/10xLaCroixDrinker)",
+  "author": "Jamie King <jamie.king@aexp.com> (https://github.com/10xLaCroixDrinker)",
   "license": "Apache-2.0",
   "devDependencies": {
     "@babel/cli": "^7.10.0",
