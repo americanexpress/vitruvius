@@ -40,7 +40,7 @@
   "devDependencies": {
     "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
-    "@commitlint/cli": "^8.3.6",
+    "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^8.3.6",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/commit-analyzer": "^8.0.1",
