@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`vitruvius should build the expected state for a flat tree of reducers 1`] = `
-Object {
+{
   "other": Immutable.Map {
     "baz": "test",
   },
@@ -15,8 +15,8 @@ Object {
 `;
 
 exports[`vitruvius should build the expected state for a nested tree of reducers 1`] = `
-Object {
-  "nested": Object {
+{
+  "nested": {
     "other": Immutable.Map {
       "baz": "test",
     },
@@ -31,7 +31,7 @@ Object {
 `;
 
 exports[`vitruvius should handle a mix of reducers having and not having buildInitialState method 1`] = `
-Object {
+{
   "other": Immutable.Map {
     "baz": "test",
   },
@@ -45,7 +45,7 @@ Object {
 `;
 
 exports[`vitruvius should handle all reducers having buildInitialState method 1`] = `
-Object {
+{
   "other": Immutable.Map {
     "baz": "test",
   },
@@ -58,10 +58,10 @@ Object {
 }
 `;
 
-exports[`vitruvius should handle no reducers having buildInitialState method 1`] = `Object {}`;
+exports[`vitruvius should handle no reducers having buildInitialState method 1`] = `{}`;
 
 exports[`vitruvius should return an initialState that is acceptable to redux's createStore 1`] = `
-Object {
+{
   "other": Immutable.Map {
     "baz": "test",
   },

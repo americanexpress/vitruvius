@@ -13,5 +13,5 @@
  */
 
 // Required file is only included in build
-// eslint-disable-next-line import/no-unresolved
+// eslint-disable-next-line import/no-unresolved, import/extensions
 module.exports = require('./lib/immutable');
