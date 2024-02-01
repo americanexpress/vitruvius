@@ -15,7 +15,8 @@
 /* eslint-disable jest/no-export -- not a test file */
 /* eslint-disable default-param-last -- avoiding rewrite */
 import { Map } from 'immutable';
-import { createStore } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
 
 export const SOME_ACTION = 'SOME_ACTION';
 
@@ -132,6 +133,18 @@ export function runVitruviusTests(describeSpec, vitruvius) {
         static: staticReducer,
       });
       const store = createStore(reducer, reducer.buildInitialState(locals));
+      const actual = store.getState();
+      expect(actual).toMatchSnapshot();
+    });
+
+    it('should return an initialState that is acceptable to redux toolkit\'s configureStore', () => {
+      const reducer = vitruvius({
+        stuff: stuffReducer,
+        things: thingsReducer,
+        other: otherReducer,
+        static: staticReducer,
+      });
+      const store = configureStore({ reducer }, reducer.buildInitialState(locals));
       const actual = store.getState();
       expect(actual).toMatchSnapshot();
     });
