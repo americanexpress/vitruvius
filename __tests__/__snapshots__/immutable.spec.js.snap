@@ -60,6 +60,23 @@ Immutable.Map {
 
 exports[`vitruviusImmutable should handle no reducers having buildInitialState method 1`] = `Immutable.Map {}`;
 
+exports[`vitruviusImmutable should return an initialState that is acceptable to redux toolkit's configureStore 1`] = `
+Immutable.Map {
+  "stuff": Immutable.Map {
+    "foo": "bar",
+  },
+  "things": Immutable.Map {
+    "bar": "baz",
+  },
+  "other": Immutable.Map {
+    "baz": "foo",
+  },
+  "static": Immutable.Map {
+    "static": true,
+  },
+}
+`;
+
 exports[`vitruviusImmutable should return an initialState that is acceptable to redux's createStore 1`] = `
 Immutable.Map {
   "stuff": Immutable.Map {
