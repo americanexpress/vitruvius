@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.1](https://github.com/americanexpress/vitruvius/compare/v3.0.0...v3.0.1) (2024-02-07)
+
+
+### Bug Fixes
+
+* **release-please:** use npmrc and set registry ([#52](https://github.com/americanexpress/vitruvius/issues/52)) ([2d881d3](https://github.com/americanexpress/vitruvius/commit/2d881d353bb382ed3623703804165f9fa4c09159))
+
 ## [3.0.0](https://github.com/americanexpress/vitruvius/compare/v2.0.1...v3.0.0) (2024-02-06)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@americanexpress/vitruvius",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
   "scripts": {
