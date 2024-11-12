@@ -12,14 +12,10 @@
  * the License.
  */
 
+import { describe, it, expect } from 'vitest';
 import { Map } from 'immutable';
 import collectBuiltState from '../src/collectBuiltState';
-import {
-  stuffReducer,
-  thingsReducer,
-  otherReducer,
-  staticReducer,
-} from './fixtures';
+import { stuffReducer, thingsReducer, otherReducer, staticReducer } from './fixtures';
 
 describe('collectBuiltState', () => {
   const locals = { data: 'test' };
@@ -33,7 +29,7 @@ describe('collectBuiltState', () => {
         static: staticReducer,
       },
       locals,
-      defaultState: new Map(),
+      defaultState: Map(),
     });
     expect(result).toMatchSnapshot();
   });

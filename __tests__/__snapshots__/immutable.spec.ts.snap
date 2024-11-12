@@ -1,0 +1,78 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`vitruviusImmutable > should build the expected state for a flat tree of reducers 1`] = `
+Immutable.Map {
+  "stuff": Immutable.Map {
+    "foo": "test",
+  },
+  "things": Immutable.Map {
+    "bar": "test",
+  },
+  "other": Immutable.Map {
+    "baz": "test",
+  },
+}
+`;
+
+exports[`vitruviusImmutable > should build the expected state for a nested tree of reducers 1`] = `
+Immutable.Map {
+  "stuff": Immutable.Map {
+    "foo": "test",
+  },
+  "nested": Immutable.Map {
+    "things": Immutable.Map {
+      "bar": "test",
+    },
+    "other": Immutable.Map {
+      "baz": "test",
+    },
+  },
+}
+`;
+
+exports[`vitruviusImmutable > should handle a mix of reducers having and not having buildInitialState method 1`] = `
+Immutable.Map {
+  "stuff": Immutable.Map {
+    "foo": "test",
+  },
+  "things": Immutable.Map {
+    "bar": "test",
+  },
+  "other": Immutable.Map {
+    "baz": "test",
+  },
+}
+`;
+
+exports[`vitruviusImmutable > should handle all reducers having buildInitialState method 1`] = `
+Immutable.Map {
+  "stuff": Immutable.Map {
+    "foo": "test",
+  },
+  "things": Immutable.Map {
+    "bar": "test",
+  },
+  "other": Immutable.Map {
+    "baz": "test",
+  },
+}
+`;
+
+exports[`vitruviusImmutable > should handle no reducers having buildInitialState method 1`] = `Immutable.Map {}`;
+
+exports[`vitruviusImmutable > should return an initialState that is acceptable to redux's createStore 1`] = `
+Immutable.Map {
+  "stuff": Immutable.Map {
+    "foo": "test",
+  },
+  "things": Immutable.Map {
+    "bar": "test",
+  },
+  "other": Immutable.Map {
+    "baz": "test",
+  },
+  "static": Immutable.Map {
+    "static": true,
+  },
+}
+`;

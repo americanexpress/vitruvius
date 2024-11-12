@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": [
+      "es2022" /* Allow for Object.entries, Error.cause */,
+      "dom",
+      "webworker.importscripts",
+      "scripthost"
+    ],
+    "module": "commonjs",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./types",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}

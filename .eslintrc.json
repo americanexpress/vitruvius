@@ -1,3 +1,50 @@
 {
-  "extends": "amex"
+  "extends": ["amex", "plugin:@typescript-eslint/recommended", "prettier"],
+  "settings": { "import/resolver": { "typescript": {} } },
+  "parserOptions": {
+    "project": true,
+    "extraFileExtensions": [".json"]
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "overrides": [
+    {
+      "files": ["__tests__/**"],
+      "extends": ["amex/test", "plugin:@typescript-eslint/recommended", "prettier"],
+      "rules": {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "ts": "never",
+            "tsx": "never",
+            "js": "never",
+            "jsx": "never"
+          }
+        ]
+      }
+    },
+    {
+      "files": ["src/**"],
+      "extends": [
+        "amex",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/strict-type-checked",
+        "prettier"
+      ],
+      "rules": {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "ts": "never",
+            "tsx": "never",
+            "js": "never",
+            "jsx": "never"
+          }
+        ]
+      }
+    }
+  ],
+  "ignorePatterns": ["types"]
 }

@@ -4,10 +4,10 @@ The following guidelines must be followed by all contributors to this repository
 
 ### Code of Conduct
 
-* Review and test your code before submitting a pull request.
-* Be kind and professional. Avoid assumptions; oversights happen.
-* Be clear and concise when documenting code; focus on value.
-* Don't commit commented code to the main repo (stash locally, if needed).
+- Review and test your code before submitting a pull request.
+- Be kind and professional. Avoid assumptions; oversights happen.
+- Be clear and concise when documenting code; focus on value.
+- Don't commit commented code to the main repo (stash locally, if needed).
 
 ### Git Commit Guidelines
 
@@ -17,7 +17,7 @@ Each commit message consists of a **header**, **body** and **footer**.
 
 #### Header
 
-The header is required and must not exceed 70 characters to ensure it is well-formatted in common git tools. It has a special format that includes a *type*, *scope* and *subject*:
+The header is required and must not exceed 70 characters to ensure it is well-formatted in common git tools. It has a special format that includes a _type_, _scope_ and _subject_:
 
 Syntax:
 
@@ -27,21 +27,21 @@ Syntax:
 
 #### Type
 
-The *type* should always be lowercase as shown below.
+The _type_ should always be lowercase as shown below.
 
 ##### Allowed `<type>` values:
 
-* **feat** (new feature for the user)
-* **fix** (bug fix for the user, not a fix to build scripts)
-* **docs** (changes to documentation)
-* **style** (formatting, missing semi colons, etc; no functional code change)
-* **refactor** (refactoring production code, eg. renaming a variable)
-* **test** (adding missing tests, refactoring tests; no production code change)
-* **chore** (updating build/env/packages, etc; no production code change)
+- **feat** (new feature for the user)
+- **fix** (bug fix for the user, not a fix to build scripts)
+- **docs** (changes to documentation)
+- **style** (formatting, missing semi colons, etc; no functional code change)
+- **refactor** (refactoring production code, eg. renaming a variable)
+- **test** (adding missing tests, refactoring tests; no production code change)
+- **chore** (updating build/env/packages, etc; no production code change)
 
 #### Scope
 
-The *scope* describes the affected code. The descriptor may be a route, component, feature, utility, etc. It should be one word or camelCased, if needed:
+The _scope_ describes the affected code. The descriptor may be a route, component, feature, utility, etc. It should be one word or camelCased, if needed:
 
 ```bash
 feat(transactions): added column for quantity
@@ -62,7 +62,7 @@ fix(transaction): missing quantity field in txn details
 
 Another scenario for scope is using a `route/scope` (or `context/scope`) syntax. This would be useful when a commit only affects a particular instance of code that is used in multiple places.
 
-*Example*: Transactions may be shown in multiple routes/contexts, but a bug affecting transaction actions may only exist under the "home" route, possibly related to other code. In such cases, you could use the following format:
+_Example_: Transactions may be shown in multiple routes/contexts, but a bug affecting transaction actions may only exist under the "home" route, possibly related to other code. In such cases, you could use the following format:
 
 ```bash
 fix(home/transactions): txn actions not working
@@ -104,7 +104,6 @@ Instead, do:
 $ git commit -m "fix(nav): broken URL for Travel"
 ```
 
-
 #### Body and Footer (optional)
 
 The body and footer should wrap at 80 characters.
@@ -118,6 +117,7 @@ For bug fixes that address open issues, the footer should be formatted like so:
 ```bash
 Closes #17, #26
 ```
+
 and for Pull Requests, use the format:
 
 ```bash
@@ -130,6 +130,7 @@ If a commit is associated with issues and pull requests, use the following forma
 Closes #17, #26
 Related #37
 ```
+
 > Issues should always be referenced before pull requests, as shown above.
 
 #### Piecing It All Together

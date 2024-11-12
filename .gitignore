@@ -1,8 +1,11 @@
 test-results
-.jest-cache
+coverage
 node_modules
 lib
 *.log
 *.swp
 *.tgz
+types
 
+.idea
+.vscode

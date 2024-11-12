@@ -12,19 +12,17 @@
  * the License.
  */
 
-export default function collectBuiltState({ reducers, locals, defaultState }) {
-  let builtState = defaultState;
+import { describe, it, expect, vi } from 'vitest';
+import vitruviusImmutable from '../src/immutable';
+import { runVitruviusImmutableTests } from './fixtures';
 
-  Object.keys(reducers).forEach((key) => {
-    const reducer = reducers[key];
-    if (typeof reducer === 'function' && typeof reducer.buildInitialState === 'function') {
-      if (typeof builtState.set === 'function') {
-        builtState = builtState.set(key, reducer.buildInitialState(locals));
-      } else {
-        builtState[key] = reducer.buildInitialState(locals);
-      }
-    }
+// eslint-disable-next-line global-require  -- no context
+vi.mock('../lib/immutable', () => require('../src/immutable'));
+
+runVitruviusImmutableTests('vitruviusImmutable', vitruviusImmutable);
+
+describe('vitruviusImmutable export', () => {
+  it('should export vitruviusImmutable', () => {
+    expect(vitruviusImmutable.name).toBe('vitruviusImmutable');
   });
-
-  return builtState;
-}
+});
