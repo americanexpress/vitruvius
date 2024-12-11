@@ -240,6 +240,18 @@ export function runVitruviusImmutableTests(
       const actual = store.getState();
       expect(actual).toMatchSnapshot();
     });
+
+    it("should return an initialState that is acceptable to redux toolkit's configureStore", () => {
+      const reducer = vitruvius<typeof locals>({
+        stuff: stuffReducer,
+        things: thingsReducer,
+        other: otherReducer,
+        static: staticReducer,
+      });
+      const store = configureStore({ reducer, preloadedState: reducer.buildInitialState(locals) });
+      const actual = store.getState();
+      expect(actual).toMatchSnapshot();
+    });
   });
 }
 /* eslint-enable default-param-last -- avoiding rewrite */
