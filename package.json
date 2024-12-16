@@ -3,7 +3,17 @@
   "version": "3.0.1",
   "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
-  "types": "types",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./types/src/index.d.ts"
+    },
+    "./immutable": {
+      "import": "./lib/immutable.js",
+      "types": "./types/src/immutable.d.ts"
+    }
+  },
+  "types": "types/src",
   "scripts": {
     "rimraf": "node -e \"process.argv.slice(1).forEach(path => require('node:fs').rmSync(path, { recursive: true, force: true }));\" --",
     "clean": "npm run rimraf lib",
