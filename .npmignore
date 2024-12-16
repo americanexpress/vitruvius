@@ -1,6 +1,7 @@
 test-results
 node_modules
 src
+!types/src
 *.log
 *.swp
 package-lock.json
