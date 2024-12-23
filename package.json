@@ -3,28 +3,32 @@
   "version": "3.0.1",
   "description": "Add buildInitialState method to your reducers",
   "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "types": "./types/src/index.d.ts"
+    },
+    "./immutable": {
+      "import": "./lib/immutable.js",
+      "types": "./types/src/immutable.d.ts"
+    }
+  },
+  "types": "types/src",
   "scripts": {
-    "clean": "rimraf lib",
-    "prebuild": "npm run test:lint && npm run clean",
-    "build": "babel src -d lib --copy-files",
+    "rimraf": "node -e \"process.argv.slice(1).forEach(path => require('node:fs').rmSync(path, { recursive: true, force: true }));\" --",
+    "clean": "npm run rimraf lib",
+    "prebuild": "npm run test:lint",
+    "build": "babel src -d lib --extensions '.ts' --copy-files & tsc",
     "test": "npm run test:lint && npm run test:unit",
     "test:git-history": "commitlint --from origin/main --to HEAD",
-    "test:lint": "eslint ./ --ignore-path .eslintignore --ext .js",
+    "pretest:lint": "npm run clean",
+    "test:lint": "eslint ./ --ignore-path .eslintignore --ext .js,.ts && prettier . --check",
     "test:lockfile": "lockfile-lint -p package-lock.json -t npm -a npm -o https: -c -i",
-    "test:unit": "jest",
+    "pretest:unit": "npm run build --ignore-scripts",
+    "test:unit": "vitest --run",
     "posttest": "npm run test:git-history && npm run test:lockfile",
     "prepublishOnly": "npm run build",
     "prepare": "husky install"
-  },
-  "jest": {
-    "preset": "amex-jest-preset",
-    "collectCoverageFrom": [
-      "src/**/*.js",
-      "!**/node_modules/**"
-    ],
-    "testPathIgnorePatterns": [
-      "fixtures"
-    ]
   },
   "repository": {
     "type": "git",
@@ -41,23 +45,25 @@
   "devDependencies": {
     "@babel/cli": "^7.23.9",
     "@babel/core": "^7.23.9",
+    "@babel/plugin-transform-typescript": "^7.25.9",
     "@commitlint/cli": "^18.6.0",
     "@commitlint/config-conventional": "^18.6.0",
     "@reduxjs/toolkit": "^2.1.0",
-    "amex-jest-preset": "^7.0.0",
+    "@types/redux-immutable": "^4.0.6",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@vitest/coverage-v8": "^2.1.4",
     "babel-preset-amex": "^4.0.3",
-    "coveralls": "^3.1.1",
     "eslint": "^8.56.0",
-    "eslint-config-amex": "^16.0.0",
-    "eslint-plugin-jest": "^27.6.3",
-    "eslint-plugin-jest-dom": "^4.0.3",
+    "eslint-config-amex": "^16.3.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
     "husky": "^8.0.3",
     "immutable": "^4.3.5",
-    "jest": "^29.7.0",
     "lockfile-lint": "^4.12.1",
+    "prettier": "^2.8.8",
     "redux": "^5.0.1",
     "redux-immutable": "^4.0.0",
-    "rimraf": "^5.0.5"
+    "typescript": "~5.4.4",
+    "vitest": "^2.1.4"
   },
   "peerDependencies": {
     "immutable": "^3||^4.0.0-rc",
